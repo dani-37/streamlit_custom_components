@@ -30,7 +30,7 @@ npm -v
 - Go to frontend/src and create a TSX file.
 - For my example, I copied the code from a [Mui transfer list](https://mui.com/material-ui/react-transfer-list/).
 - Import your new component in <code>src/components.tsx</code>. Use the string you set in the <code>componentsMap</code> constant (in my examples, 'comp1' and 'comp2') as the name of a python file in the <code>src/widgets</code> folder. 
-- This is the function you will use in Python to call your component. Declare any inputs here. To retrieve these values in the Typescript code, you can call them like this.
+- This is the function you will use in Python to call your component. Declare any inputs here. To retrieve these values in the Typescript code, you can call them like this. In the Python file, define your inputs:
 
 ```python
 from ..utils import *
@@ -38,12 +38,14 @@ from ..utils import *
 def comp1(vegetable:str, key=None, height=None):
     component(id=get_func_name(), kw=locals(), key=key, height=height)
 ```
+Then, using the same name, list them in your <code>.tsx</code>:
 
 ```js
    interface vars {
   vegetable: string
 }
-    ```
+```
+
 - If the height component is left empty, frame height will auto adjust. 
 - List your component in the widgets <code>__init__.py</code>
 

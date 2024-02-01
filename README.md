@@ -59,7 +59,7 @@ def comp1(vegetable:str, key=None, height=None):
 To use it in my <code>.tsx</code>, I can simply declare it like this:
 
 ```js
-   interface vars {
+interface vars {
   vegetable: string
 }
 ```

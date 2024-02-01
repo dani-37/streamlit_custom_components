@@ -30,7 +30,7 @@ npm -v
 - Go to frontend/src and create a TSX file.
 - For my example, I copied the code from a [Mui transfer list](https://mui.com/material-ui/react-transfer-list/) into <code>myComponent1.tsx</code>.
 - Import your new component in <code>src/components.tsx</code>. Use the string you set in the <code>componentsMap</code> constant (in my examples, 'comp1' and 'comp2') as the name of a Python file in the <code>src/widgets</code> folder. 
-- This is the function you will use in Python to call your component. Say I have a component that takes a <code>str</code> variable called <code>vegetable</code>:
+- This Python file you've created in the  <code>widgets</code> folder holds the function you will use in Python to call your component. Say I have a component that takes a <code>str</code> variable called <code>vegetable</code>:
 
 ```python
 from ..utils import *

@@ -44,9 +44,9 @@ export default componentsMap
 ```
 
 - Use the string you set in the <code>componentsMap</code> constant (in my examples, 'comp1' and 'comp2') as the name of a Python file in the <code>src/widgets</code> folder. This file holds the function you will use in Python to call your component.
-- List your component in the widgets <code>__init__.py</code>. And you're done!
+- List your component in the widgets <code>init.py</code>. And you're done!
 
-# Using inputs
+### Using inputs
 
 Say I have a component <code>comp1</code> that takes a <code>str</code> variable called <code>vegetable</code>. I first set my inputs in my <code>widgets/comp1.py</code>:
 
@@ -84,7 +84,7 @@ Now it should work.
 ## Build your component
 You might not want to go through the whole npm process every time. Once you have a component you are sure is ready, you can make it into a Python package and even upload it to pip!
 
-To name your component, go to <code>setup.py</code> and change the name of the package and author. Make sure to change the name elsewhere if you change it here (even in the <code>MANIFEST.in</code>). Then, in  <code>/custom_components/__init__.py</code>, change <code>_RELEASE</code> to <code>True</code>.
+To name your component, go to <code>setup.py</code> and change the name of the package and author. Make sure to change the name elsewhere if you change it here (even in the <code>MANIFEST.in</code>). Then, in  <code>/custom_components/init.py</code>, change <code>_RELEASE</code> to <code>True</code>.
 Make sure all the packages you need are listed in <code>package.json</code>
 Then go to the terminal in <code>frontend</code> and run:
 ```

@@ -2,7 +2,7 @@
 
 Easily install multiple custom components in one project by using Typescript code.This repository includes the minimum files necessary for creating your components along with some examples and an explanation of how to make and use new components. 
 
- ##Installation
+ ## Installation
  
  Install node in the [website](https://nodejs.org/en/download/) or by running
  ```bash
@@ -18,12 +18,12 @@ npm install
 
 You can check if both have been correctly installed by running
 
-  ```bash
+```bash
 node -v 
 npm -v
 ```
 
-##New custom component
+## New custom component
   
  Now comes the fun part! Just by using TSX, you can create new Streamlit components.
  
@@ -31,12 +31,13 @@ npm -v
 - For my example, I copied the code from a [Mui transfer list](https://mui.com/material-ui/react-transfer-list/).
 - Import your new component in <code>src/components.tsx</code>. Use the string you set in the <code>componentsMap</code> constant (in my examples, 'comp1' and 'comp2') as the name of a python file in the <code>src/widgets</code> folder. 
 - This is the function you will use in Python to call your component. Declare any inputs here. To retrieve these values in the Typescript code, you can call them like this.
+
 ```python
 from ..utils import *
 
 def comp1(vegetable:str, key=None, height=None):
     component(id=get_func_name(), kw=locals(), key=key, height=height)
-    ```
+```
 
 ```js
    interface vars {
@@ -47,7 +48,7 @@ def comp1(vegetable:str, key=None, height=None):
 - List your component in the widgets <code>__init__.py</code>
 
 
-##Using your component
+## Using your component
 
 Now you can call your file by importing it into your Streamlit code! Simply write
 ```
@@ -83,7 +84,7 @@ pip install ./dist/custom_components-0.0.1-py3-none-any.whl
 
 pip install ./dist/custom_components-0.0.1-py3-none-any.whl
 
-##Upload to pip:
+## Upload to pip:
 Uploading your component online is simple! You can share with people by doing:
 ```
 pip install twine

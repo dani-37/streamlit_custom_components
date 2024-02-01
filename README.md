@@ -1,6 +1,6 @@
 #  Streamlit custom components
 
-Easily install multiple custom components in one project by using Typescript code.This repository includes the minimum files necessary for creating your components along with some examples and an explanation of how to make and use new components. 
+Easily install multiple custom components in one project by using Typescript code. This repository includes the minimum files necessary for creating your components along with some examples and an explanation of how to make and use new components. 
 
  ## Installation
  

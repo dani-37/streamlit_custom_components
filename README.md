@@ -29,8 +29,26 @@ npm -v
  
 - Go to frontend/src and create a TSX file.
 - For my example, I copied the code from a [Mui transfer list](https://mui.com/material-ui/react-transfer-list/) into <code>myComponent1.tsx</code>.
-- Import your new component in <code>src/components.tsx</code>. Use the string you set in the <code>componentsMap</code> constant (in my examples, 'comp1' and 'comp2') as the name of a Python file in the <code>src/widgets</code> folder. 
-- This Python file you've created in the  <code>widgets</code> folder holds the function you will use in Python to call your component. Say I have a component that takes a <code>str</code> variable called <code>vegetable</code>:
+- Import your new component in <code>src/components.tsx</code>.
+
+```js
+import MyComp1 from "./MyComponent1"
+import MyComp2 from "./MyComponent2"
+
+const componentsMap: any = {
+    'comp1': MyComp1,
+    'comp2': MyComp2,
+}
+
+export default componentsMap
+```
+
+- Use the string you set in the <code>componentsMap</code> constant (in my examples, 'comp1' and 'comp2') as the name of a Python file in the <code>src/widgets</code> folder. This file holds the function you will use in Python to call your component.
+- List your component in the widgets <code>__init__.py</code>. And you're done!
+
+# Using inputs
+
+Say I have a component <code>comp1</code> that takes a <code>str</code> variable called <code>vegetable</code>. I first set my inputs in my <code>widgets/comp1.py</code>:
 
 ```python
 from ..utils import *
@@ -45,8 +63,8 @@ To use it in my <code>.tsx</code>, I can simply declare it like this:
   vegetable: string
 }
 ```
-- List your component in the widgets <code>__init__.py</code>. And you're done!
-- You will see that height is an input given. If the height component is left empty or set to 0, frame height will auto adjust. By using <code>streamlit run example.py</code>, you can see how this affects <code>MyComponent2</code>.
+
+You will see that height is a default input. If it is left empty or set to 0, frame height will auto adjust. By using <code>streamlit run example.py</code>, you can see how this affects <code>MyComponent2</code>.
 
 
 ## Using your component

@@ -97,11 +97,11 @@ cd..
 python setup.py sdist bdist_wheel
 ```
 A <code>dist</code> folder should now have appeared. You can now use pip to install your package!
-```
+```python
 pip install ./dist/custom_components-0.0.1-py3-none-any.whl
 ```
 You can now use it in Python by importing your components. In my example, I would do
-```
+```python
 from custom_components import comp1, comp2
 ```
 
